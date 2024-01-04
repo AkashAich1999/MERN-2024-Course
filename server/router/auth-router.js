@@ -13,4 +13,8 @@ router.route("/").get((req, res) => {
     	res.status(200).send("Welcome, to Akash Technologies !");
 });
 
+router.route("/register").get((req, res) => {
+    res.status(200).send("Welcome, to Registration Page !");
+});
+
 module.exports = router;
