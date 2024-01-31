@@ -22,13 +22,14 @@ const register = async (req, res) => {
         }
 
         // hash the password
-        const saltRound = 10;
-        const hash_password = await bcrypt.hash(password, saltRound);
+        /* const saltRound = 10;
+          const hash_password = await bcrypt.hash(password, saltRound); */
 
         // If user does not Exists, then Create One
-        const userCreated = await User.create({ username, email, phone, password:hash_password });
+        // const userCreated = await User.create({ username, email, phone, password:hash_password });
+        const userCreated = await User.create({ username, email, phone, password });
 
-        res.status(200).json({ userCreated });
+        res.status(201).json({ userCreated });
     }
     catch(error){
         res.status(400).send({msg:"page not found"});
